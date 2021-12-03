@@ -1,0 +1,8 @@
+
+For Each
+		Where CTBPlanoDesc = 'CAIXA'
+		Defined BY CTBPlanoId
+		
+		&CTBPlanoConta = CTBPlanoConta
+	
+EndFor

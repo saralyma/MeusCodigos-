@@ -1,0 +1,10 @@
+
+If NOT &CTBLancDataInicio.IsEmpty()
+		If NOT &CTBLancDataFinal.IsEmpty()
+			//RCTBLivroCaixa.Call(&CTBLancDataEntradaInicio, &CTBLancDataEntradaFinal,  &CTBPlanoConta )
+		Else
+			Msg('Preencher a data final.')
+		EndIf	
+	Else
+		Msg('Preencher a data inicial.')
+	EndIf

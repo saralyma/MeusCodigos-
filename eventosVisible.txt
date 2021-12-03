@@ -1,0 +1,12 @@
+
+If &ImprimeMesAtivo = SimNao.Sim 
+//		&CTBLancDatainicial.Visible = False
+//		&CTBLancDatafinal.Visible = False
+	else 
+		If &ImprimeMesAtivo = SimNao.Nao
+//		   &CTBLancDataInicio.Visible = True
+//		   &CTBLancDataFinal.Visible = True
+		Endif
+
+
+        
