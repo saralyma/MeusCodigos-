@@ -1,0 +1,8 @@
+If &TermoLCx 
+	&folha = 1
+	&livro = "LIVRO CAIXA GERAL "
+	&Tipolivro = 'O Presente '+ &livro +' contem '+ &folha.ToString().Trim() + ' folhas numeradas de nrº 0001 ao nrº ' + Str(&ultpg)  
+	Print PBTermo1
+	Print PBTermo2
+
+endif
