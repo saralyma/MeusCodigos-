@@ -1,0 +1,138 @@
+package com.example.calculator;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+public class MainActivity extends AppCompatActivity implements View.OnClickListener  {
+    private Button numeroZero, numeroUm , numeroDois , numeroTres,numeroQuatro,
+            numeroCinco, numeroSeis , numeroSete, numeroOito, numeroNove ,ponto, adicao ,subtracao,multiplicacao = findViewById(R.id.multiplicacao),divisao ,igual,botao_limpar;
+
+    private TextView txtExpressao , txtResultado;
+    private ImageView backspace;
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        iniciarComponentes();
+        getSupportActionBar().hide();
+
+        numeroZero.setOnClickListener(this);
+        numeroUm.setOnClickListener(this);
+        numeroDois.setOnClickListener(this);
+        numeroTres.setOnClickListener(this);
+        numeroQuatro.setOnClickListener(this);
+        numeroCinco.setOnClickListener(this);
+        numeroSeis.setOnClickListener(this);
+        numeroSete.setOnClickListener(this);
+        numeroOito.setOnClickListener(this);
+        numeroNove.setOnClickListener(this);
+        ponto.setOnClickListener(this);
+        subtracao.setOnClickListener(this);
+        multiplicacao.setOnClickListener(this);
+        divisao.setOnClickListener(this);
+
+
+
+    }
+    private void iniciarComponentes(){
+        numeroZero = findViewById(R.id.numero_zero);
+        numeroUm = findViewById(R.id.numero_um);
+        numeroDois = findViewById(R.id.numero_dois);
+        numeroTres = findViewById(R.id.numero_tres);
+        numeroQuatro = findViewById(R.id.numero_quatro);
+        numeroCinco = findViewById(R.id.numero_cinco);
+        numeroSeis = findViewById(R.id.numero_seis);
+        numeroSete = findViewById(R.id.numero_sete);
+        numeroOito = findViewById(R.id.numero_oito);
+        numeroNove = findViewById(R.id.numero_nove);
+        ponto = findViewById(R.id.numero_ponto);
+        adicao = findViewById(R.id.adicao);
+        subtracao = findViewById(R.id.subtracao);
+        divisao = findViewById(R.id.bt_divisao);
+        igual = findViewById(R.id.igual);
+        botao_limpar = findViewById(R.id.bt_limpar);
+        txtExpressao = findViewById(R.id.txt_expressao);
+        txtResultado = findViewById(R.id.txt_resultado);
+        multiplicacao = findViewById(R.id.multiplicacao);
+        backspace = findViewById(R.id.backspace);
+
+
+    }
+    public  void Acrescentar_expressao(String  string,boolean limpar_dados){
+
+        if (txtResultado.getText().equals("")){
+            txtExpressao.setText("");
+
+        }
+        if (limpar_dados) {
+            txtResultado.setText((""));
+            txtExpressao.append(string);
+        }else {
+            txtExpressao.append(txtResultado.getText());
+            txtExpressao.append(string);
+            txtResultado.setText("");
+
+        }
+
+    }
+
+
+    // subscrita de metodo
+    public void onClick(View view, String string) {
+        switch(view.getId()){
+            case R.id.numero_zero:
+                Acrescentar_expressao(string="0",true);
+                break;
+            case R.id.numero_um:
+                Acrescentar_expressao(string="1",true);
+                break;
+            case R.id.numero_dois:
+                Acrescentar_expressao(string="2",true);
+                break;
+            case R.id.numero_tres:
+                Acrescentar_expressao(string="3",true);
+                break;
+            case R.id.numero_quatro:
+                Acrescentar_expressao(string="4",true);
+                break;
+            case R.id.numero_cinco:
+                Acrescentar_expressao(string="5",true);
+                break;
+            case R.id.numero_seis:
+                Acrescentar_expressao(string="6",true);
+                break;
+            case R.id.numero_sete:
+                Acrescentar_expressao(string="7",true);
+                break;
+            case R.id.numero_oito:
+                Acrescentar_expressao(string="8",true);
+                break;
+            case R.id.numero_nove:
+                Acrescentar_expressao(string="9",true);
+                break;
+            case R.id.numero_ponto:
+                Acrescentar_expressao(string=".",true);
+                break;
+            case R.id.adicao:
+                Acrescentar_expressao(string="+",false);
+                break;
+            case R.id.subtracao:
+                Acrescentar_expressao(string="-",false);
+                break;
+            case R.id.bt_divisao:
+                Acrescentar_expressao(string="/",false);
+                  break;
+
+
+        }
+    }
+    }
+}
